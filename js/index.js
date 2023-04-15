@@ -24,7 +24,7 @@ async function initMap() {
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
   const icon = {
-    url: "./img/start.png", // url
+    url: "./img/0.png", // url
     scaledSize: new google.maps.Size(150, 150), // scaled size
     size: new google.maps.Size(150,150), //size
     //origin: null, //origin
@@ -62,7 +62,7 @@ async function initMap() {
   // Create the markers.
   tourStops.forEach(([position, title], i) => {
     let icon = {
-      url: "./img/"+i+".png", // url
+      url: "./img/"+(i+1)+".png", // url
       scaledSize: new google.maps.Size(150, 150), // scaled size
       size: new google.maps.Size(150,150), //size
     };
@@ -70,7 +70,7 @@ async function initMap() {
       position,
       map,
       title: `${i + 1}. ${title}`,
-      label: `${i + 1}`,
+      //label: `${i + 1}`,
       //optimized: false,
       icon:icon,
     });
@@ -95,12 +95,12 @@ async function initMap() {
 
   //const image ="../img/capolinea.png";
   //const image="./img/start.png"
-
   new google.maps.Marker({
     position: myLatLng,
     map,
     icon: icon,
   });
+
 
   //when the map zoom changes, resize the icon based on the zoom level so the marker covers the same geographic area
 /*
