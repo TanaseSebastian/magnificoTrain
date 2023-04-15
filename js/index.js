@@ -61,6 +61,11 @@ async function initMap() {
 
   // Create the markers.
   tourStops.forEach(([position, title], i) => {
+    let icon = {
+      url: "./img/"+i+".png", // url
+      scaledSize: new google.maps.Size(150, 150), // scaled size
+      size: new google.maps.Size(150,150), //size
+    };
     const marker = new google.maps.Marker({
       position,
       map,
