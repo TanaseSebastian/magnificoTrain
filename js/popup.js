@@ -22,10 +22,10 @@ let updateTimer;
 
 const music_list = [
   {
-    img : './images/stay.png',
-    name : 'Stay',
-    artist : 'The Kid LAROI, Justin Bieber',
-    music : './music/stay.mp3'
+    img : './images/malatia.jpeg',
+    name : 'Malatia',
+    artist : 'Ciccio Merollar',
+    music : './music/malatia.mp3'
   },
   {
     img : './images/fallingdown.jpg',
@@ -60,7 +60,7 @@ function loadTrack(track_index){
 
   updateTimer = setInterval(setUpdate, 1000);
 
-  curr_track.addEventListener('ended', nextTrack);
+  //curr_track.addEventListener('ended', nextTrack);
   random_bg_color();
 }
 

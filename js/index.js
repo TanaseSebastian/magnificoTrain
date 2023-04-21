@@ -44,12 +44,12 @@ const templatePupup2 = `
                 <div class="total-duration">00:00</div>
            </div>
 
-           <div class="slider_container">
-               <i class="fa fa-volume-down"></i>
-                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                <i class="fa fa-volume-up"></i>
-           </div>
 
+
+             <div class="playpause-track" onclick="playpauseTrack()">
+                    <i class="fa fa-play-circle fa-5x"></i>
+            </div>
+            <!--
            <div class="buttons">
                <div class="random-track" onclick="randomTrack()">
                    <i class="fas fa-random fa-2x" title="random"></i>
@@ -67,6 +67,7 @@ const templatePupup2 = `
                     <i class="fa fa-repeat fa-2x" title="repeat"></i>
                 </div>
            </div>
+           -->
 
             <div id="wave">
                 <span class="stroke"></span>
@@ -106,14 +107,20 @@ async function initMap() {
   map.setMapTypeId('satellite');
 
 
-
+  let withScreen = screen.width;
+  console.log(withScreen);
+  let prev_infowindow =false;
+  let size;
+  if(withScreen<400) size = 200;
+  else if (withScreen < 600) size = 180;
+  else size = 120;
 
 
 
   const icon = {
     url: "./img/0.png", // url
-    scaledSize: new google.maps.Size(150, 150), // scaled size
-    size: new google.maps.Size(150,150), //size
+    scaledSize: new google.maps.Size(size, size), // scaled size
+    size: new google.maps.Size(size,size), //size
     //origin: null, //origin
     //anchor: null, //anchor
     //scale: new google.maps.Size(8,8) //scale
@@ -146,15 +153,6 @@ async function initMap() {
   ];
 
 
-
-
-  let withScreen = screen.width;
-  console.log(withScreen);
-  let prev_infowindow =false;
-  let size;
-  if(withScreen<400) size = 200;
-  else if (withScreen < 600) size = 180;
-  else size = 120;
 
 
   // Create the markers.
