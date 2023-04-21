@@ -179,7 +179,10 @@ i.fa-pause-circle,
 i.fa-step-forward,
 i.fa-step-backward,
 p {
+  display: flex;
+  justify-content: center;
   cursor: pointer;
+  font-size: 9em;
 }
 .randomActive{
   color: black;
